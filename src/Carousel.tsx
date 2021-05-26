@@ -580,7 +580,7 @@ class Carousel extends React.Component<CarouselProps, CarouselInternalState> {
       this.resetMoveStatus();
     }
   }
-  private isInViewport(el: HTMLInputElement) {
+  private isInViewport(el: HTMLElement) {
     const {
       top = 0,
       left = 0,
@@ -614,7 +614,7 @@ class Carousel extends React.Component<CarouselProps, CarouselInternalState> {
       case 9:
         if (
           this.isChildOfCarousel(target) &&
-          target instanceof HTMLInputElement &&
+          target instanceof HTMLElement &&
           !this.isInViewport(target)
         ) {
           return this.next();
